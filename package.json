@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "All the fun deals in the city",
   "scripts": {
-    "build": "open -a \"Google Chrome\" http://127.0.0.1:8080/; http-server"
+    "build": "http-server & open -a \"Google Chrome\" http://127.0.0.1:8080/"
   },
   "repository": {
     "type": "git",
