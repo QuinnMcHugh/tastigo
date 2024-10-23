@@ -16,6 +16,12 @@ todo: write out how to deploy this with GitHub pages
 
 ### Tech Stack
 
+- React
+- TypeScript
+- Vite
+- v0 by Vercel for fast generative UI
+-Shadcn ()
+
 v0 uses:
 
 -shadcn/ui - component collection (not a library, apparently)
@@ -26,13 +32,32 @@ v0 uses:
 
 to-do NEXT
 
--DONE - setup shadcn vite template - get that working with components pulled from collection 
-
--setup a vite project inside the tastigo repo
-  -DONE - copy in the v0 weekly boilerplate 
-  -retain the deals.json and other useful stuff
-  -push
-
+-DONE - generate a deal page
+  -copy in new component for deal
+-DONE - establish a deals-repo
+  -has all the deals hardcoded so far
+  -can getDeal(id)
+  -this will have to be called from the DealPage component
+-DONE - get nav working from main page to individual deal page
+  -links to subpages
+  -use the deals.json data over the mocked data from v0
+  -research this
+    -outcome: use react router
+  -should the url change? Back button nav?
+    -have a deal id route, a main landing page route
+    -don't want all the resources to be fetched with each back/forward nav - how did the react-router tutorial handle this?
+  -break out each of the views to use a MVC architecture (loader (?) is referenced from react-router, renderer is pure view)
+    -research MVC patterns in React apps
+    -verdict: Container/Presenter pattern (former is Controller/ViewModel, latter is the View). This isn't really needed until views get large+complex
+-DONE - improve the styling of the site
+  -consistent header for landing and deal pages
+  -more consistent deal page to landing page styling
+  -renders well on mobiel and desktop
+-consume deals.json data, consider best schema, reformat json and code to match
+  -get these working by day of week - reflect in app
+-fill out more known deals (if any)
+-publish static web app on GH pages - with v0 of Seattle knowledge
+-figure out how to get on-save formatting working with eslint / prettier (read about these tools - do they have to integrate with vite? Try not for simplicity)
 -read some about Vite (read guide/docs/philosophy)
 
 readme from vite setup below
