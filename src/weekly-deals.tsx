@@ -1,11 +1,11 @@
 import React from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { IDeal } from './interfaces';
+import { DayOfWeek, IDeal, WeeklyRecurrence } from './interfaces';
 import { Link } from 'react-router-dom';
 import { dealsRepo } from './deals-repo';
 import { Header } from './header';
 
-const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const daysOfWeek: DayOfWeek[] = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
 type IDealCardProps = IDeal;
 
@@ -25,7 +25,7 @@ const DealCard = (props: IDealCardProps) => {
             <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{props.title}</h3>
             <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-4">{props.description}</p>
           </div>
-          <img src={props.image} alt={props.title} className="w-full h-24 sm:h-32 object-cover" />
+          <img src={props.imageUrl} alt={props.title} className="w-full h-24 sm:h-32 object-cover" />
         </div>
       </button>
     </Link>
@@ -33,12 +33,34 @@ const DealCard = (props: IDealCardProps) => {
 };
 
 interface IDayCardAccordionProps {
-  day: string;
+  day: DayOfWeek;
   deals: IDeal[];
 }
 
+const dealIsValidForDay = (deal: IDeal, day: DayOfWeek): boolean => {
+  const recurrenceType = deal.occurrence.recurrence;
+
+  if (recurrenceType.pattern === 'weekly') {
+    const weeklyRecurrence = recurrenceType as WeeklyRecurrence;
+    return weeklyRecurrence.patternSpecifics.days.includes(day);
+  } else if (recurrenceType.pattern === 'whenOpen') {
+    // Can't determine if the establishment is open on the given day
+    return false;
+  }
+
+  return false;
+};
+
 const DayAccordion = ({ day, deals }: IDayCardAccordionProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const daysDeals = React.useMemo(() => deals.filter((deal) => {
+    if (dealIsValidForDay(deal, day)) {
+      return true;
+    }
+  }), [day, deals]);
+
+  const capitalizedDayName = day.charAt(0).toUpperCase() + day.slice(1);
 
   return (
     <div className="mb-4">
@@ -46,13 +68,13 @@ const DayAccordion = ({ day, deals }: IDayCardAccordionProps) => {
         className="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-md"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h3 className="text-lg font-semibold">{day}</h3>
+        <h3 className="text-lg font-semibold">{capitalizedDayName}</h3>
         {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
       </button>
       {isOpen && (
         <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {deals.map((deal) => (
-            <DealCard {...deal} />
+          {daysDeals.map((deal) => (
+            <DealCard key={deal.id} {...deal} />
           ))}
         </div>
       )}
@@ -61,7 +83,7 @@ const DayAccordion = ({ day, deals }: IDayCardAccordionProps) => {
 }
 
 export default function WeeklyDeals() {
-  const mockDeals = React.useMemo(() => dealsRepo.getAllDeals(), []);
+  const deals = React.useMemo(() => dealsRepo.getAllDeals(), []);
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -69,7 +91,7 @@ export default function WeeklyDeals() {
 
       <main className="container mx-auto px-4 py-8">
         {daysOfWeek.map((day) => (
-          <DayAccordion key={day} day={day} deals={mockDeals} />
+          <DayAccordion key={day} day={day} deals={deals} />
         ))}
       </main>
     </div>

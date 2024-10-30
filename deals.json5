@@ -1,14 +1,11 @@
-import { IDeal } from "./interfaces";
-
-class DealsRepo {
-  private _deals: IDeal[] = [
+[
     {
         id: 1,
         title: "$2 Beers",
         description: "$2 Rainier Tall Boys, $3.49 Microbrew & Craft Ciders",
         establishmentName: "Royal Grinders",
         neighborhood: "Fremont",
-        createdDateTime: new Date("2024-06-23T21:00:00Z"),
+        createdDateTime: "2024-06-23T21:00:00Z",
         location: "https://maps.app.goo.gl/vHtYSrhQyadoNdsd6",
         imageUrl: "",
         dealProof: "",
@@ -29,7 +26,7 @@ class DealsRepo {
         description: "$4.5, $5.5, $6.5 beers available in certain sections",
         establishmentName: "T-Mobile Park",
         neighborhood: "SoDo",
-        createdDateTime: new Date("2024-06-23T21:00:00Z"),
+        createdDateTime: "2024-06-23T21:00:00Z",
         dealProof: "https://www.mlb.com/mariners/ballpark/information/value-options/value-menu",
         location: "https://maps.app.goo.gl/NbEcAHqTBPqvKnvz6",
         imageUrl: "",
@@ -46,7 +43,7 @@ class DealsRepo {
         description: "$11 cocktails all Sunday long",
         establishmentName: "Stampede",
         neighborhood: "Fremont",
-        createdDateTime: new Date("2024-06-23T21:00:00Z"),
+        createdDateTime: "2024-06-23T21:00:00Z",
         location: "https://maps.app.goo.gl/FjpovUU5hgs5FVrm6",
         imageUrl: "",
         dealProof: "https://www.stampedecocktailclub.com/current-menu",
@@ -67,7 +64,7 @@ class DealsRepo {
         description: "$10 = 16oz Sapporo beer, 5oz sake, chef's choice of appetizer every day",
         establishmentName: "Rondo Japanese Kitchen",
         neighborhood: "Capitol Hill",
-        createdDateTime: new Date("2024-06-23T21:00:00Z"),
+        createdDateTime: "2024-06-23T21:00:00Z",
         dealProof: "https://www.rondojapanesekitchen.com/menu",
         location: "https://maps.app.goo.gl/tAmFDFzf2MzHhfSC9",
         imageUrl: "",
@@ -89,7 +86,7 @@ class DealsRepo {
         description: "99 cent tacos every Tuesday",
         establishmentName: "The Tin Hat Bar & Grill",
         neighborhood: "Phinney Ridge",
-        createdDateTime: new Date("2024-06-23T21:00:00Z"),
+        createdDateTime: "2024-06-23T21:00:00Z",
         location: "https://maps.app.goo.gl/rxVsktsgp44M7wwCA",
         imageUrl: "",
         dealProof: "",
@@ -110,7 +107,7 @@ class DealsRepo {
         description: "All movies are $6 on Tuesday",
         establishmentName: "Majestic Bay Theatres",
         neighborhood: "Ballard",
-        createdDateTime: new Date("2024-06-23T21:00:00Z"),
+        createdDateTime: "2024-06-23T21:00:00Z",
         dealProof: "https://www.instagram.com/p/C8X91K0SY1H/",
         location: "https://maps.app.goo.gl/61U6vhMK6oZrhanC6",
         imageUrl: "",
@@ -124,16 +121,8 @@ class DealsRepo {
                 description: "Tuesday's",
             },
         },
-    },
-  ];
+    }
+]
 
-  public getDeal(id: number) {
-    return this._deals.find(deal => id === deal.id);
-  }
-
-  public getAllDeals() {
-    return this._deals;
-  }
-}
-
-export const dealsRepo = new DealsRepo();
+// include Seattle Art Museum free first Thursday's
+// add Lady Yum deal too

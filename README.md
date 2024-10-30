@@ -54,11 +54,24 @@ to-do NEXT
   -more consistent deal page to landing page styling
   -renders well on mobiel and desktop
 -consume deals.json data, consider best schema, reformat json and code to match
+  -what about monthly deals (SAM art museum free days, first Thursday - somehow account for recurring nature)
   -get these working by day of week - reflect in app
+    -put deals under correct days on calendar page
+  -parse+interpret the occurrence text in the deal-page
+  -show the establishment name with a link for the location field
+
+-add 404 page
+-is there a way to get the day accordion to still be open when clicking back to the home page?
+-devise a way to read the deals.json into the deals-repo
 -fill out more known deals (if any)
+-polish functionality of the two pages
+  -for long occurrence texts, the icon is shrinking. Maybe also align it with the first line of text in this case
+-update readme, instructions on how to run, what app is
 -publish static web app on GH pages - with v0 of Seattle knowledge
+-update readme - how to publish to GH pages
 -figure out how to get on-save formatting working with eslint / prettier (read about these tools - do they have to integrate with vite? Try not for simplicity)
 -read some about Vite (read guide/docs/philosophy)
+-does hoodmaps make money? Could learn from that crowdsourced model of success
 
 readme from vite setup below
 
