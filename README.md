@@ -59,8 +59,9 @@ to-do NEXT
     -put deals under correct days on calendar page
   -parse+interpret the occurrence text in the deal-page
   -show the establishment name with a link for the location field
-
 -add 404 page
+  -route for deal not found too
+
 -is there a way to get the day accordion to still be open when clicking back to the home page?
 -devise a way to read the deals.json into the deals-repo
 -fill out more known deals (if any)

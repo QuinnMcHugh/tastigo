@@ -5,6 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { IDeal, WeeklyRecurrence } from './interfaces';
 import { dealsRepo } from './deals-repo';
 import { Header } from './header';
+import { NotFoundPage } from './not-found-page';
 
 interface IDealPageProps {
   id: number;
@@ -28,12 +29,20 @@ const getOccurrenceText = (deal: IDeal): string => {
 
 export default function DealPage({ id }: IDealPageProps) {
   const [deal, setDeal] = React.useState<IDeal>();
+  const [isDealNotFound, setIsDealNotFound] = React.useState(false);
 
   React.useEffect(() => {
-    setDeal(dealsRepo.getDeal(id));
+    const deal = dealsRepo.getDeal(id);
+    setDeal(deal);
+
+    if (deal == null) {
+      setIsDealNotFound(true);
+    }
   }, [id]);
 
-  if (deal == null) {
+  if (isDealNotFound) {
+    return <NotFoundPage />;
+  } else if (deal == null) {
     return null;
   }
 

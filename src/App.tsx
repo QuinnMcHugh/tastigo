@@ -2,6 +2,7 @@
 import { createBrowserRouter, RouterProvider, useParams } from "react-router-dom";
 import WeeklyDeals from './weekly-deals';
 import DealPage from "./deal-page";
+import { NotFoundPage } from "./not-found-page";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       return <DealPage id={id} />;
     },
   },
+  {
+    path: "*",
+    Component: () => <NotFoundPage />,
+  }
 ]);
 
 function App() {
