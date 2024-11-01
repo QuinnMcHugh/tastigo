@@ -1,8 +1,10 @@
-// import './App.css';
+import React from "react";
 import { createBrowserRouter, RouterProvider, useParams } from "react-router-dom";
 import WeeklyDeals from './weekly-deals';
 import DealPage from "./deal-page";
 import { NotFoundPage } from "./not-found-page";
+import { AppContext, IAppContext } from "./app-provider";
+import { DayOfWeek } from "./interfaces";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +29,17 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const [openDays, setOpenDays] = React.useState<DayOfWeek[]>([]);
+
+  const appContext: IAppContext = {
+    openDays,
+    setOpenDays,
+  };
+
   return (
-    <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+    <AppContext.Provider value={appContext}>
+      <RouterProvider router={router} />
+    </AppContext.Provider>
   );
 }
 

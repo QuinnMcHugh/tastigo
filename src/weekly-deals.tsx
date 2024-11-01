@@ -4,6 +4,7 @@ import { DayOfWeek, IDeal, WeeklyRecurrence } from './interfaces';
 import { Link } from 'react-router-dom';
 import { dealsRepo } from './deals-repo';
 import { Header } from './header';
+import { useAppContext } from './app-provider';
 
 const daysOfWeek: DayOfWeek[] = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
@@ -52,7 +53,7 @@ const dealIsValidForDay = (deal: IDeal, day: DayOfWeek): boolean => {
 };
 
 const DayAccordion = ({ day, deals }: IDayCardAccordionProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const { openDays, setOpenDays } = useAppContext();
 
   const daysDeals = React.useMemo(() => deals.filter((deal) => {
     if (dealIsValidForDay(deal, day)) {
@@ -61,6 +62,15 @@ const DayAccordion = ({ day, deals }: IDayCardAccordionProps) => {
   }), [day, deals]);
 
   const capitalizedDayName = day.charAt(0).toUpperCase() + day.slice(1);
+
+  const isOpen = React.useMemo(() => openDays.includes(day), [day, openDays]);
+  const setIsOpen = React.useMemo(() => (isOpen: boolean) => {
+    if (isOpen) {
+      setOpenDays((openDays) => [...openDays, day]);
+    } else {
+      setOpenDays((openDays) => openDays.filter((openDay) => openDay !== day));
+    }
+  }, [setOpenDays, day]);
 
   return (
     <div className="mb-4">
