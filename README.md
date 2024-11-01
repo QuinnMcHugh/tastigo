@@ -62,13 +62,14 @@ to-do NEXT
 -DONE - add 404 page
   -route for deal not found too
 -DONE - is there a way to get the day accordion to still be open when clicking back to the home page?
-
--NEXT: devise a way to read the deals.json into the deals-repo
+-DONE - devise a way to read the deals.json into the deals-repo
   -just make it a .ts file
--fill out more known deals (if any)
+-DONE - fill out more known deals (if any)
+
 -polish functionality of the two pages
   -for long occurrence texts, the icon is shrinking. Maybe also align it with the first line of text in this case
 -update readme, instructions on how to run, what app is
+
 -publish static web app on GH pages - with v0 of Seattle knowledge
 -update readme - how to publish to GH pages
 -figure out how to get on-save formatting working with eslint / prettier (read about these tools - do they have to integrate with vite? Try not for simplicity)
