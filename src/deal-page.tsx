@@ -57,15 +57,15 @@ export default function DealPage({ id }: IDealPageProps) {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center space-x-2 text-muted-foreground mb-4">
-              <Clock className="w-4 h-4" />
+            <div className="flex space-x-2 text-muted-foreground mb-4">
+              <Clock className="w-4 h-4 min-w-4 mt-1 mb-1" />
               <span>{getOccurrenceText(deal)}</span>
             </div>
             <div className="flex items-center space-x-2 text-muted-foreground mb-4">
               <MapPin className="w-4 h-4" />
               <a href={deal.location} target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-600">{deal.establishmentName}</a>
             </div>
-            <div className="aspect-video bg-muted rounded-lg mb-4"></div>
+            <img className="aspect-video rounded-lg mb-4" src={deal.imageUrl} />
             <p className="text-muted-foreground">
               Join us every Tuesday at Tin Hat Bar & Grill for our famous Taco Tuesday deal! Enjoy delicious tacos for just 99 cents each. 
               Perfect for a budget-friendly night out with friends or a quick dinner after work. Our tacos are made with fresh ingredients 

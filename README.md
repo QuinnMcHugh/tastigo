@@ -72,9 +72,9 @@ to-do NEXT
     -can deal cards be condensed on mobile? Just necessary text
     -some site logo
   -daily
+    -add images to the deals.ts for known deals
     -for long occurrence texts, the icon is shrinking. Maybe also align it with the first line of text in this case
     -add correct body text below image
-    -add images to the deals.ts for known deals
   -edit deals.ts to have titles "Lead With the Deal". That'll be reflected in the weekly and daily pages
   -bug where daily deal is receiving click for day's accordion - need repro
 
