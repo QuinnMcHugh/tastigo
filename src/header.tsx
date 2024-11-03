@@ -6,7 +6,9 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to='/'>
           <div className="flex items-center sm:mb-0">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-300 rounded-md mr-2"></div>
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-300 rounded-md mr-2">
+              <img src='/img/square_whisper.jpg' />
+            </div>
             <h1 className="text-xl sm:text-2xl font-bold">Tastigo</h1>
           </div>
         </Link>

@@ -66,12 +66,22 @@ to-do NEXT
   -just make it a .ts file
 -DONE - fill out more known deals (if any)
 
--polish functionality of the two pages
-  -for long occurrence texts, the icon is shrinking. Maybe also align it with the first line of text in this case
--update readme, instructions on how to run, what app is
+-NEXT - polish functionality of the two pages
+  -weekly
+    -deal images
+    -can deal cards be condensed on mobile? Just necessary text
+    -some site logo
+  -daily
+    -for long occurrence texts, the icon is shrinking. Maybe also align it with the first line of text in this case
+    -add correct body text below image
+    -add images to the deals.ts for known deals
+  -edit deals.ts to have titles "Lead With the Deal". That'll be reflected in the weekly and daily pages
+  -bug where daily deal is receiving click for day's accordion - need repro
 
+-update readme, instructions on how to run, what app is
 -publish static web app on GH pages - with v0 of Seattle knowledge
 -update readme - how to publish to GH pages
+
 -figure out how to get on-save formatting working with eslint / prettier (read about these tools - do they have to integrate with vite? Try not for simplicity)
 -read some about Vite (read guide/docs/philosophy)
 -does hoodmaps make money? Could learn from that crowdsourced model of success

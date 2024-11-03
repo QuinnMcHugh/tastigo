@@ -82,7 +82,7 @@ const DayAccordion = ({ day, deals }: IDayCardAccordionProps) => {
         {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
       </button>
       {isOpen && (
-        <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="mt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {daysDeals.map((deal) => (
             <DealCard key={deal.id} {...deal} />
           ))}

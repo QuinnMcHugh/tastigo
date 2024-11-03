@@ -9,7 +9,7 @@ export const allKnownDeals: IDeal[] = [
         neighborhood: "Fremont",
         createdDateTime: new Date("2024-06-23T21:00:00Z"),
         location: "https://maps.app.goo.gl/vHtYSrhQyadoNdsd6",
-        imageUrl: "",
+        imageUrl: "/img/RoyalGrinders.webp",
         dealProof: "",
         occurrence: {
             allDay: true,
@@ -31,7 +31,7 @@ export const allKnownDeals: IDeal[] = [
         createdDateTime: new Date("2024-06-23T21:00:00Z"),
         dealProof: "https://www.mlb.com/mariners/ballpark/information/value-options/value-menu",
         location: "https://maps.app.goo.gl/NbEcAHqTBPqvKnvz6",
-        imageUrl: "",
+        imageUrl: "/img/marinersstadium.jpg",
         occurrence: {
             allDay: true,
             recurrence: {
@@ -47,7 +47,7 @@ export const allKnownDeals: IDeal[] = [
         neighborhood: "Fremont",
         createdDateTime: new Date("2024-06-23T21:00:00Z"),
         location: "https://maps.app.goo.gl/FjpovUU5hgs5FVrm6",
-        imageUrl: "",
+        imageUrl: "/img/stampede_cocktail_club.webp",
         dealProof: "https://www.stampedecocktailclub.com/current-menu",
         occurrence: {
             allDay: true,
@@ -69,7 +69,7 @@ export const allKnownDeals: IDeal[] = [
         createdDateTime: new Date("2024-06-23T21:00:00Z"),
         dealProof: "https://www.rondojapanesekitchen.com/menu",
         location: "https://maps.app.goo.gl/tAmFDFzf2MzHhfSC9",
-        imageUrl: "",
+        imageUrl: "/img/rondo_japanese.jpg",
         occurrence: {
             startTime: "2:00pm",
             endTime: "5:30pm",
@@ -90,7 +90,7 @@ export const allKnownDeals: IDeal[] = [
         neighborhood: "Phinney Ridge",
         createdDateTime: new Date("2024-06-23T21:00:00Z"),
         location: "https://maps.app.goo.gl/rxVsktsgp44M7wwCA",
-        imageUrl: "",
+        imageUrl: "/img/tin_hat.jpg",
         dealProof: "",
         occurrence: {
             allDay: true,
@@ -112,7 +112,7 @@ export const allKnownDeals: IDeal[] = [
         createdDateTime: new Date("2024-06-23T21:00:00Z"),
         dealProof: "https://www.instagram.com/p/C8X91K0SY1H/",
         location: "https://maps.app.goo.gl/61U6vhMK6oZrhanC6",
-        imageUrl: "",
+        imageUrl: "/img/majestic_bay.webp",
         occurrence: {
             allDay: true,
             recurrence: {
@@ -133,7 +133,7 @@ export const allKnownDeals: IDeal[] = [
         createdDateTime: new Date("2024-11-01T00:00:00Z"),
         dealProof: "https://www.instagram.com/p/CvVXLMitn9B/",
         location: "https://maps.app.goo.gl/gU4BLYm283k57jxA9",
-        imageUrl: "",
+        imageUrl: "/img/lady_yum.jpg",
         occurrence: {
             allDay: true,
             recurrence: {
@@ -148,3 +148,4 @@ export const allKnownDeals: IDeal[] = [
 ];
 
 // include Seattle Art Museum free first Thursday's - once there's a lifestyle deals page, this would be useful
+// first thursday free admission at: seattle asian art museum, Seattle art museum, nordic, NAAM, Burke Museum, Seattle Japanese Garden, MOHAI 
