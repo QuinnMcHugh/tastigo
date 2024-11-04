@@ -53,7 +53,7 @@ export default function DealPage({ id }: IDealPageProps) {
         <Card className="mx-8 my-6 max-w-2xl ">
           <CardHeader>
             <div className="flex items-center space-x-2">
-              <CardTitle className="text-3xl font-bold mb-2 tracking-normal">{deal.title} at {deal.establishmentName}</CardTitle>
+              <CardTitle className="text-3xl font-bold tracking-normal">{deal.title} at {deal.establishmentName}</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
@@ -66,12 +66,9 @@ export default function DealPage({ id }: IDealPageProps) {
               <a href={deal.location} target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-600">{deal.establishmentName}</a>
             </div>
             <img className="aspect-video rounded-lg mb-4" src={deal.imageUrl} />
-            <p className="text-muted-foreground">
-              Join us every Tuesday at Tin Hat Bar & Grill for our famous Taco Tuesday deal! Enjoy delicious tacos for just 99 cents each. 
-              Perfect for a budget-friendly night out with friends or a quick dinner after work. Our tacos are made with fresh ingredients 
-              and come with a variety of toppings to suit every taste. Don't miss out on this incredible offer - see you on Tuesday!
-            </p>
+            <p className="text-muted-foreground">{deal.longDescription}</p>
           </CardContent>
+
           <CardFooter className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <Button variant="outline" size="icon">
@@ -82,7 +79,6 @@ export default function DealPage({ id }: IDealPageProps) {
                 <ArrowDown className="h-4 w-4" />
               </Button>
             </div>
-            <Button>Claim Deal</Button>
           </CardFooter>
         </Card>
       </div>

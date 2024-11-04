@@ -24,7 +24,7 @@ const DealCard = (props: IDealCardProps) => {
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="p-3 sm:p-4">
             <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{props.title}</h3>
-            <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-4">{props.description}</p>
+            <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-4">{props.shortDescription}</p>
           </div>
           <img src={props.imageUrl} alt={props.title} className="w-full h-24 sm:h-32 object-cover" />
         </div>

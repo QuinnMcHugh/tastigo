@@ -65,8 +65,7 @@ to-do NEXT
 -DONE - devise a way to read the deals.json into the deals-repo
   -just make it a .ts file
 -DONE - fill out more known deals (if any)
-
--NEXT - polish functionality of the two pages
+-DONE - polish functionality of the two pages
   -weekly
     -deal images
     -can deal cards be condensed on mobile? Just necessary text
@@ -75,8 +74,10 @@ to-do NEXT
     -add images to the deals.ts for known deals
     -for long occurrence texts, the icon is shrinking. Maybe also align it with the first line of text in this case
     -add correct body text below image
-  -edit deals.ts to have titles "Lead With the Deal". That'll be reflected in the weekly and daily pages
-  -bug where daily deal is receiving click for day's accordion - need repro
+    -clean up voting and "claim deal" buttons
+  
+-NEXT - edit deals.ts to have titles "Lead With the Deal". That'll be reflected in the weekly and daily pages
+-bug where daily deal is receiving click for day's accordion - need repro
 
 -update readme, instructions on how to run, what app is
 -publish static web app on GH pages - with v0 of Seattle knowledge

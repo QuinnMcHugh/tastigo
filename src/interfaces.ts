@@ -1,7 +1,8 @@
 export interface IDeal {
   id: number;
   title: string;
-  description: string;
+  shortDescription: string;
+  longDescription: string;
   imageUrl: string;
   establishmentName: string;
   occurrence: IDealOccurrence;
